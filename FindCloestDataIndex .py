@@ -9,4 +9,8 @@ mydate=pd.Index(myf['date'])
 date_=pd.to_datetime('2009-01-05')
 index_=mydate.get_loc(date_,method='nearest')
 
-
+for y in range(2009,2012):
+    for m in range(1,13):
+        date_=pd.to_datetime(str(y)+'-'+str(m)+'-'+'05')
+        index_=mydate.get_loc(date_,method='nearest')
+        print(str(index_)+':'+str(myf['date'][index_]))
